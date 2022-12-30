@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Nav from './components/Nav';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import Home from './views/Home';
+import Login from './views/Login';
+import SignUp from './views/SignUp';
+import PointGuards from './views/PointGuards';
+import ShootingGuards from './views/ShootingGuards';
+import SmallForwards from './views/SmallForwards';
+import PowerForwards from './views/PowerForwards';
+import Centers from './views/Centers';
+import Squad from './views/Squad';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Nav />
+        <div> 
+         
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/pointguards' element={<PointGuards />} />
+              <Route path='/shootingguards' element={<ShootingGuards />} />
+              <Route path='/smallforwards' element={<SmallForwards />} />
+              <Route path='/powerforwards' element={<PowerForwards />} />
+              <Route path='/centers' element={<Centers />} />
+              <Route path='/squad' element={<Squad />} />
+            </Routes>
+            
+        </div>
+    </Router>
   );
 }
 
